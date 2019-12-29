@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import AuthRoot from './routes';
+import Routes from "./routes/routes";
 
-const App = () => <AuthRoot />
+//const { SignRoutes } = Routes;
+
+const App = () => <Routes />;
 
 export default App;
