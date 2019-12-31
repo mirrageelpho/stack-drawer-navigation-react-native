@@ -15,7 +15,7 @@ export default function Signin({ navigation }) {
     console.log("Logando");
     try {
       await AsyncStorage.setItem("TOKEN", "123123123123");
-      navigation.navigate("LoadingApp");
+      navigation.navigate("Loading");
     } catch (error) {
       console.log(error);
     }

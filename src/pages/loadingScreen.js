@@ -8,19 +8,13 @@ import {
   Text
 } from "react-native";
 
-export default function LoadingApp({ navigation }) {
-  useEffect(() => {
-    _isLogin();
-  });
+import { IsLogged } from '../services/auth';
 
-  _isLogin = async () => {
-    try {
-      const token = await AsyncStorage.getItem("TOKEN");
-      navigation.navigate(token ? "App" : "Auth");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+export default function LoadingScreen({ navigation }) {
+  
+  useEffect(() => {
+    IsLogged(navigation);
+  });
 
   return (
     <View style={css.container}>

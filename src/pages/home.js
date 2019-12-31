@@ -1,20 +1,18 @@
-import React from "react";
-import { View, Text, StyleSheet, AsyncStorage, Button } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text, StyleSheet, Button } from "react-native";
+
+import * as Auth from '../services/auth';
 
 export default function Home({ navigation }) {
-  _logoff = async () => {
-    try {
-      await AsyncStorage.removeItem("TOKEN");
-      navigation.navigate("LoadingApp");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+  useEffect(()=>{
+    Auth.IsLogged(navigation);
+  })
 
   return (
     <View style={css.container}>
       <Text>Home</Text>
-      <Button title="Logoff" onPress={() => _logoff()} />
+      <Button title="Logoff" onPress={() => Auth.logOff(navigation)} />
     </View>
   );
 }

@@ -2,18 +2,19 @@ import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
 import AppRoutes from "./app.routes.js";
 import SignRoutes from "./sign.routes.js";
-
-import LoadingApp from "./../pages/loadingApp";
+import HomeRoutes from './home.routes';
+import LoadingScreen from "./../pages/loadingScreen";
 
 const Routes = createAppContainer(
   createSwitchNavigator(
     {
-      LoadingApp: LoadingApp,
+      Loading: LoadingScreen,
       App: AppRoutes,
-      Auth: SignRoutes
+      Auth: SignRoutes,
+      home: HomeRoutes
     },
     {
-      initialRouteName: "LoadingApp"
+      initialRouteName: "Loading"
     }
   )
 );
