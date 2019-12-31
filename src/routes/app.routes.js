@@ -1,13 +1,13 @@
 import { createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 //pages
-import Home from "./../pages/home";
+import HomeRoutes from "./home.routes";
 import Products from "./../pages/products";
 
 //Monta uma pilha de navegação para tratar as telas de Autenticação
 const AppStack = createDrawerNavigator(
   {
-    Home: Home,
+    Home: HomeRoutes,
     Products: Products
   },
   {
